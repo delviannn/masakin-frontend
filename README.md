@@ -5,6 +5,8 @@ keluarga. Dibangun dari wireframe `titel.html` — tampilan mengikuti palet dan 
 letak wireframe, tapi strukturnya dipisah menjadi CSS + JS supaya gampang dikembangkan
 dan di-review.
 
+🔗 **Live preview:** https://delviannn.github.io/masakin-frontend/
+
 ---
 
 ## Cara menjalankan
@@ -71,6 +73,8 @@ Kalau mau pindah ke React/Vue/Next, `views.js` bisa dipetakan jadi komponen.
   berisi data, data contoh tidak dipakai.
 - Semua teks keluar-masuk halaman lewat `esc()` di `views.js` supaya aman dari XSS.
 - Responsive: sidebar jadi menu geser di bawah 700px.
+- Kontribusi: buat branch baru (`git checkout -b fitur/nama-fitur`), jangan commit
+  langsung ke `main`.
 
 ---
 
