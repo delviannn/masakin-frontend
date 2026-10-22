@@ -64,6 +64,10 @@ Kalau mau pindah ke React/Vue/Next, `views.js` bisa dipetakan jadi komponen.
 | Laporan | Total resep/kategori, bar chart per kategori, daftar favorit, cetak |
 | Profil Lokal | Nama dan email untuk tampilan lokal, tanpa akun |
 
+## Flowchart
+
+Lihat [flowchart navigasi aplikasi dan tambah/edit resep](FLOWCHART.md).
+
 ---
 
 ## Catatan untuk kolaborasi
