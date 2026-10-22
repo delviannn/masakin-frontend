@@ -62,8 +62,8 @@ h1, h2, h3 { line-height: 1.25; }
   overflow-y: auto;
 }
 
-.brand { font-size: 23px; font-weight: 800; letter-spacing: .4px; }
-.brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: 0; }
+.brand { display: flex; justify-content: center; }
+.brand-logo { display: block; width: min(100%, 175px); aspect-ratio: 1; object-fit: contain; border-radius: 10px; }
 
 .nav-section-label {
   font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
@@ -102,6 +102,7 @@ h1, h2, h3 { line-height: 1.25; }
   position: sticky; top: 0; z-index: 20;
 }
 .topbar-title { font-weight: 700; font-size: 16px; }
+.topbar-logo { width: 42px; height: 42px; object-fit: contain; border-radius: 8px; }
 .topbar-right { display: flex; align-items: center; gap: 12px; }
 .avatar {
   width: 36px; height: 36px; border-radius: 50%;
@@ -237,14 +238,6 @@ tbody tr:hover { background: #fbfaf6; }
 .notice { padding: 13px; border: 1px dashed var(--line); border-radius: 10px; color: var(--muted); }
 .notice strong { color: var(--ink); }
 
-/* ---------- Auth --------------------------------------------------------- */
-
-.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 22px; }
-.auth-card { width: min(100%, 420px); background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 30px; box-shadow: var(--shadow); }
-.auth-card .brand { margin-bottom: 6px; }
-.auth-card h1 { font-size: 22px; margin: 20px 0 4px; }
-.auth-form { display: grid; gap: 14px; margin-top: 20px; }
-.auth-foot { margin-top: 18px; text-align: center; color: var(--muted); }
 .link-btn { border: 0; padding: 0; background: transparent; text-decoration: underline; color: var(--ink); }
 
 .profile-photo {

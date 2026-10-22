@@ -3,7 +3,7 @@
    Semua aksi UI dipetakan di ACTIONS supaya tidak ada inline handler.
    ========================================================================== */
 
-let page = "login";
+let page = "dashboard";
 let selectedId = null;
 let searchTerm = "";
 let categoryFilter = "Semua kategori";
@@ -20,9 +20,7 @@ const go = target => {
 
 const render = () => {
   const root = document.getElementById("app");
-  root.innerHTML = (page === "login" || page === "register")
-    ? loginPage(page === "register")
-    : shell(pages()[page]());
+  root.innerHTML = shell(pages()[page]());
   bindForms(root);
 };
 
@@ -38,28 +36,11 @@ function bindForms(root) {
   root.querySelectorAll("form").forEach(form => {
     form.addEventListener("submit", e => {
       e.preventDefault();
-      if (form.id === "auth-form") return authSubmit(form);
       if (form.id === "search-form") return onSearch(form);
       if (form.id === "filter-form") return onFilter(form);
       if (form.id === "recipe-form") return saveRecipe(form);
     });
   });
-}
-
-function authSubmit(form) {
-  const data = new FormData(form);
-  const registering = form.dataset.register === "1";
-  if (registering) {
-    if (data.get("password") !== data.get("confirm")) return toast("Password dan konfirmasi password tidak sama.");
-    profile = { ...profile, name: data.get("name").trim() || profile.name, email: data.get("email").trim() };
-    save();
-    toast(`Akun dibuat. Selamat datang, ${profile.name}!`);
-  } else {
-    const email = data.get("email").trim();
-    if (email) { profile = { ...profile, email }; save(); }
-    toast(`Masuk sebagai ${profile.name}`);
-  }
-  go("dashboard");
 }
 
 function onSearch(form) {
@@ -125,7 +106,6 @@ const ACTIONS = {
   nav: el => go(el.dataset.page),
   "open-menu": () => { sidebarOpen = true; render(); },
   "close-menu": () => { sidebarOpen = false; render(); },
-  "toggle-auth": () => go(page === "register" ? "login" : "register"),
 
   open: el => { selectedId = Number(el.dataset.id); go("detail"); },
   new: () => { selectedId = null; go("form"); },
@@ -234,9 +214,6 @@ const ACTIONS = {
     toast("Profil diperbarui.");
     render();
   },
-  "change-password": () => toast("Demo frontend: alur ganti password belum terhubung ke server."),
-  logout: () => { sidebarOpen = false; go("login"); },
-
   print: () => window.print()
 };
 

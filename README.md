@@ -1,9 +1,9 @@
 # MASAKin — Buku Resep & Menu Masakan Keluarga
 
 Frontend **statis** (tanpa build step, tanpa framework) untuk aplikasi buku resep
-keluarga. Dibangun dari wireframe `titel.html` — tampilan mengikuti palet dan tata
-letak wireframe, tapi strukturnya dipisah menjadi CSS + JS supaya gampang dikembangkan
-dan di-review.
+umum yang bisa digunakan tanpa login. Dibangun dari wireframe `titel.html` —
+tampilan mengikuti palet dan tata letak wireframe, tapi strukturnya dipisah
+menjadi CSS + JS supaya gampang dikembangkan dan di-review.
 
 🔗 **Live preview:** https://delviannn.github.io/masakin-frontend/
 
@@ -34,6 +34,8 @@ python -m http.server 8000   # lalu buka http://localhost:8000
 ```
 masakin-frontend/
 ├── index.html            # titik masuk, cuma nge-load CSS + 3 file JS
+├── assets/
+│   └── logo-masakin.jpeg  # logo MASAKin
 ├── styles/
 │   └── styles.css        # design system (palet, layout, komponen, responsive)
 ├── scripts/
@@ -52,7 +54,6 @@ Kalau mau pindah ke React/Vue/Next, `views.js` bisa dipetakan jadi komponen.
 
 | Halaman | Isi |
 |---|---|
-| Login / Daftar | Form auth (demo, belum tersambung server) |
 | Beranda | Statistik, resep terbaru, menu favorit, pencarian |
 | Resep | Daftar resep + cari & filter kategori, tambah/edit/hapus |
 | Detail Resep | Foto, info, daftar bahan, langkah memasak, favorit, bagikan, tambah ke belanja |
@@ -61,7 +62,7 @@ Kalau mau pindah ke React/Vue/Next, `views.js` bisa dipetakan jadi komponen.
 | Favorit | Kumpulan resep yang ditandai ☆ |
 | Daftar Belanja | Bahan gabungan dari resep, checkbox, cetak, kosongkan |
 | Laporan | Total resep/kategori, bar chart per kategori, daftar favorit, cetak |
-| Profil | Nama, email, foto, ganti password (demo), logout |
+| Profil Lokal | Nama dan email untuk tampilan lokal, tanpa akun |
 
 ---
 

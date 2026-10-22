@@ -30,27 +30,6 @@ function recipeCard(r, options = {}) {
   </article>`;
 }
 
-/* ---------- Auth --------------------------------------------------------- */
-
-function loginPage(register = false) {
-  return `<main class="auth-page"><section class="auth-card">
-    <div class="brand">MASAKin <small>Buku Resep dan Menu Masakan Keluarga</small></div>
-    <h1>${register ? "Buat akun keluarga" : "Selamat datang kembali"}</h1>
-    <p class="muted">Simpan dan bagikan resep favorit keluarga.</p>
-    <form class="auth-form" id="auth-form" data-register="${register ? "1" : "0"}">
-      ${register ? `<label>Nama Lengkap<input class="input" name="name" required placeholder="Nama Anda"></label>` : ""}
-      <label>Email<input class="input" name="email" type="email" required placeholder="nama@email.com"></label>
-      <label>Password<input class="input" name="password" type="password" required placeholder="Masukkan password"></label>
-      ${register ? `<label>Konfirmasi Password<input class="input" name="confirm" type="password" required placeholder="Ulangi password"></label>` : ""}
-      <button class="btn primary block" type="submit">${register ? "Daftar" : "Login"}</button>
-    </form>
-    <div class="auth-foot">${register ? "Sudah punya akun?" : "Belum punya akun?"}
-      <button class="link-btn" data-action="toggle-auth">${register ? "Login" : "Daftar akun"}</button>
-    </div>
-    <p class="small muted" style="text-align:center;margin-bottom:0">Demo frontend: autentikasi belum terhubung ke server.</p>
-  </section></main>`;
-}
-
 /* ---------- Shell -------------------------------------------------------- */
 
 const navItems = [
@@ -70,15 +49,16 @@ function shell(content) {
   return `<div class="app-shell">
     ${sidebarOpen ? `<div class="backdrop" data-action="close-menu"></div>` : ""}
     <aside class="sidebar ${sidebarOpen ? "open" : ""}" id="sidebar">
-      <div class="brand">MASAKin <small>Buku resep keluarga</small></div>
+      <div class="brand"><img class="brand-logo" src="assets/logo-masakin.jpeg" alt="Logo MASAKin"></div>
       <p class="nav-section-label">Menu</p>
       <nav class="nav-list" aria-label="Navigasi utama">${navHtml}</nav>
-      <div class="sidebar-note"><strong>Wireframe demo</strong><br>Data tersimpan di perangkat ini</div>
+      <div class="sidebar-note"><strong>Aplikasi umum</strong><br>Data tersimpan di perangkat ini</div>
     </aside>
     <main class="main">
       <header class="topbar">
         <div class="row">
           <button class="btn mobile-menu" data-action="open-menu" aria-label="Buka menu">☰</button>
+          <img class="topbar-logo" src="assets/logo-masakin.jpeg" alt="">
           <span class="topbar-title">MASAKin</span>
         </div>
         <div class="topbar-right">
@@ -289,7 +269,7 @@ function reportsPage() {
 /* ---------- Profil ------------------------------------------------------- */
 
 function profilePage() {
-  return `<h1 class="page-heading">Profil Pengguna</h1><p class="subtitle">Informasi anggota keluarga yang sedang masuk.</p>
+  return `<h1 class="page-heading">Profil Lokal</h1><p class="subtitle">Informasi untuk pengalaman penggunaan di perangkat ini.</p>
     <div class="card" style="max-width:700px">
       <div class="row" style="align-items:flex-start;gap:20px">
         <div class="profile-photo">${profile.photo ? `<img src="${esc(profile.photo)}" alt="Foto profil">` : "Foto Profil"}</div>
@@ -298,10 +278,8 @@ function profilePage() {
       <hr class="divider">
       <div class="actions">
         <button class="btn" data-action="edit-profile">Edit Profil</button>
-        <button class="btn" data-action="change-password">Ganti Password</button>
-        <button class="btn danger" data-action="logout">Logout</button>
       </div>
-      <p class="small muted">Data profil disimpan secara lokal di browser.</p>
+      <p class="small muted">MASAKin dapat digunakan tanpa akun. Data profil ini hanya disimpan di browser ini.</p>
     </div>`;
 }
 
