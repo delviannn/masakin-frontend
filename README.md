@@ -73,8 +73,10 @@ Kalau mau pindah ke React/Vue/Next, `views.js` bisa dipetakan jadi komponen.
   berisi data, data contoh tidak dipakai.
 - Semua teks keluar-masuk halaman lewat `esc()` di `views.js` supaya aman dari XSS.
 - Responsive: sidebar jadi menu geser di bawah 700px.
-- Kontribusi: buat branch baru (`git checkout -b fitur/nama-fitur`), jangan commit
-  langsung ke `main`.
+- Kontribusi: baca [`CONTRIBUTING.md`](CONTRIBUTING.md) — isinya perintah `git`
+  langkah demi langkah untuk kawan yang ikut mengembangkan repo ini. Singkatnya:
+  kerja di branch baru (`git checkout -b fitur/nama-fitur`), jangan commit langsung
+  ke `main`.
 
 ---
 
